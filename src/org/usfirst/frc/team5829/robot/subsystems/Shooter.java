@@ -16,7 +16,7 @@ import com.ctre.*;
 import com.ctre.CANTalon.FeedbackDevice;
 import com.ctre.CANTalon.TalonControlMode;
 public class Shooter extends Subsystem {
-	//Emilien is dumb
+	//Mark is dumb
 	double p = 4.5;
 	double i = 0;
 	double d = 2.7;
