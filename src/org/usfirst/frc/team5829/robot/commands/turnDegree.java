@@ -22,16 +22,15 @@ public class turnDegree extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	Robot.navx.reset();
     	
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	turnIsFinished = false;
+    	
     	Robot.driveTrain.turnDegrees(dg);
-    	if (Robot.navx.getYaw() < (dg +5) && Robot.navx.getYaw() > (dg -5)) {
-    		turnIsFinished = true;
-    	}
+    	turnIsFinished = Robot.driveTrain.turnDegrees(dg);
     }
 
     // Make this return true when this Command no longer needs to run execute()

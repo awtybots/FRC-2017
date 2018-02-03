@@ -1,7 +1,5 @@
 package org.usfirst.frc.team5829.robot;
-import org.usfirst.frc.team5829.robot.commands.Intake;
-import org.usfirst.frc.team5829.robot.commands.Shoot;
-
+import org.usfirst.frc.team5829.robot.commands.*;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -13,6 +11,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
  */
 public class OI {
 	public Joystick xbox = new Joystick(0);
+	public Joystick xbox2 = new Joystick(1);
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
     // You create one by telling it which joystick it's on and which button
@@ -21,16 +20,42 @@ public class OI {
     // Button button = new JoystickButton(stick, buttonNumber);
 	Button btnA = new JoystickButton(xbox, 1);
 	Button btnB = new JoystickButton(xbox, 2);
-	Button btnX = new JoystickButton(xbox, 3);
+	Button btnX 
+	= new JoystickButton(xbox, 3);
 	Button btnR1 = new JoystickButton(xbox, 6);
 	Button btnY = new JoystickButton(xbox,4);
+	Button btnL1 = new JoystickButton(xbox, 5);
 	Button btnS = new JoystickButton(xbox, 8);
-	
+	Button btnM = new JoystickButton(xbox, 7);
+	Button btnW = new JoystickButton(xbox, 9);
+	Button btnA2 = new JoystickButton(xbox2, 1);
+	Button btnB2 = new JoystickButton(xbox2, 2);
+	Button btnX2 = new JoystickButton(xbox2, 3);
+	Button btnRB = new JoystickButton(xbox2, 6);
+	Button btnY2 = new JoystickButton(xbox2,4);
+	Button btnLB = new JoystickButton(xbox2, 5);
+	Button btnS2 = new JoystickButton(xbox2, 8);
+	Button btnM2 = new JoystickButton(xbox2, 7);
+	Button btnW2 = new JoystickButton(xbox2, 9);
+	public double getRawAnalogStickALX() {
+		return xbox.getRawAxis(0);
+	}
+
+	public double getRawAnalogStickALY() {
+		return xbox.getRawAxis(1);
+	}
+
+	public double getRawAnalogStickARX() {
+		return xbox.getRawAxis(4);
+	}
+
+	public double getRawAnalogStickARY() {
+		return xbox.getRawAxis(5);
+	}
     
     // There are a few additional built in buttons you can use. Additionally,
     // by subclassing Button you can create custom triggers and bind those to
-    // commands the same as any other Button.
-    
+     
     //// TRIGGERING COMMANDS WITH BUTTONS
     // Once you have a button, it's trivial to bind it to a button in one of
     // three ways:
@@ -49,10 +74,43 @@ public class OI {
     // button.whenReleased(new ExampleCommand());
 	
 	public OI(){
-			btnA.whenPressed(new Shoot(925));
-		    btnB.whenPressed(new Shoot(950));
-		    btnX.whenPressed(new Shoot(1000));
-		    btnY.whenPressed(new Shoot(0)); 
+		   // btnA.toggleWhenPressed(new shooterIntakeOn());
+			btnX2.toggleWhenPressed(new Shoot(-3500));
+		    //btnS.toggleWhenPressed(new IntakeFlapOpen());
+		    
+		    //btnS.whenPressed(new driveForward(60));
+		    //btnS.whenPressed(new autonomousCurve(108,120,45));
+		    //btnS.whenPressed(new autonomousCurve(16.5,120,180
+		    //btnS.whenPressed(new autonomousCurve(10,10,90));
+		    //btnS.toggleWhenPressed(new solenoidActivation(2,1));
+		    //btnS2.toggleWhenPressed(new ());
+		   //
+		   // btnB2.toggleWhenPressed(new intakeReverse());
+		   // btnY.whileHeld(new GearOutake());
+		    btnB.whileHeld(new GearIntakeOn());
+		    
+		   // btnB.whileHeld(new GearIntakeOff());
+		  btnY.whileHeld(new GearOutake());
+		    btnB2.toggleWhenPressed(new Shoot(-5000));
+		    btnA.whenPressed(new shooterOff());
+		   btnLB.whenPressed(new hangerOn(1));
+		   btnLB.whenReleased(new HangerOff());
+		   btnRB.whenPressed(new hangerIdle(.95));
+		   btnRB.whenReleased(new HangerOff());
+		   btnS2.whenPressed(new shooterOff());
+		  btnA2.toggleWhenPressed(new shooterIntakeOn());
+		  btnY2.toggleWhenPressed(new shooterIntakeOff());
+		   // btnA2.whileHeld(new gearLifterUpOverride());
+		   //btnY2.whileHeld(new gearLifterDownOverride());
+		   //btnX2.whenPressed(new resetEncoderPosition());
+		   //btnRB.whenPressed(new hangerOn(2));
+		   //btnRB.whenReleased(new HangerOff());
+		    
+		    btnL1.whileHeld(new GearLifterUp());
+		    btnR1.whileHeld(new GearLifterDown());
+		     	
+		    	
+		    
 
 		    
 		

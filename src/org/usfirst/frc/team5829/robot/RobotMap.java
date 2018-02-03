@@ -8,15 +8,37 @@ package org.usfirst.frc.team5829.robot;
 public class RobotMap {
     // For example to map the left and right motors, you could define the
     // following variables to use with your drivetrain subsystem.
-    public static int leftFrontMotor = 2;
-    public static int rightFrontMotor = 1;
-    public static int leftBackMotor = 4;
-    public static int rightBackMotor = 3;
-    public static int shooterMotorOne = 5; //RightSide1
-    public static int shooterMotorTwo = 6;  //RightSide2
-    public static int shooterMotorThree = 7; //LeftSide1
-    public static int shooterMotorFour = 8; //LeftSide2
-    public static int intakeMotor = 9;
+    public static int leftFrontMotor = 3;// set to 3
+    public static int rightFrontMotor = 4; // set to 4
+    public static int leftBackMotor = 1; // set to 1
+    public static int rightBackMotor = 2; // set to 2
+    public static int shooterMotorOne = 7; //RightSide1
+    public static int shooterMotorTwo = 8;  //RightSide2
+    public static int intakeMotor = 13;
+    public static int shooterIntakeMotor = 12;
+    public static int hangerMotorOne = 9; 
+    public static int hangerMotorTwo = 6;
+    
+    public static int gearIntake = 10; //----> fix for comp bot
+    public static int gearIntakeLifterOne = 5;
+    public static int gearIntakeLifterTwo = 11;
+     
+    public static int pneumaticOne = 0;
+    public static int pneumaticTwo = 1;
+    public static int pneumaticThree = 2;
+    
+    
+    public static int shiftHigh = 5;
+    public static int shiftLow = 7;
+    
+    public static int intakeFlapOpen = 3;
+    //public static int intakeFlapClose = 4;
+    
+    public static int gearPunchOpen = 0;
+    //public static int gearPunchClose = 6;
+    
+    public static int shiftHangOn = 0;
+    public static int shiftHangOff = 1;
     
     
     // If you are using multiple modules, make sure to define both the port
